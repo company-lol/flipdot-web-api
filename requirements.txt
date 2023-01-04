@@ -1,2 +1,2 @@
 flask
-paho_mqtt
+git+https://github.com/company-lol/flipdotapi.git
