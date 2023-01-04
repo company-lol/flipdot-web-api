@@ -1,13 +1,13 @@
 version: '2'
 services:
-  flipdot_mqtt_web:
+  flipdot_web_api:
     build:
       context: .
       dockerfile: Dockerfile
     container_name: flipdot_mqtt_web
     restart: unless-stopped
     ports:
-      - "5000:5000"
+      - "5050:5000"
     environment:
       - "BROKER=yourbrokerip"
       - "TOPIC=flipdot/message"
