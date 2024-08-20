@@ -1,6 +1,11 @@
-FROM python:3.6
+FROM python:3.8-slim
 COPY . /app
 WORKDIR /app
+
+RUN apt-get update && apt-get install -y --no-install-recommends git \
+&& apt-get purge -y --auto-remove \
+&& rm -rf /var/lib/apt/lists/*
+
 RUN pip3 install -r requirements.txt
 
 ENTRYPOINT ["python3"]
